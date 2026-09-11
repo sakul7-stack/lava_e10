@@ -28,7 +28,7 @@ sudo dmesg | tail -30
 - VID:PID: **0e8d:0002** (PID changed 0003 → 0002; `lsusb` name comes from a Doro entry in usb.ids — irrelevant)
 - Interface: exactly one — class 08 (Mass Storage), subclass 06 (SCSI), protocol 50 (Bulk-Only), `usb-storage` bound
 - Nodes: `/dev/sdc` (usb, Lava E10) — **0 B, no media: the microSD slot is empty; no card inserted**. Internal flash NOT exposed.
-- Serial number string **PRESENT in this mode** (`<USB_SERIAL_REDACTED>`, masked per §12 policy) — absent in COM mode
+- Serial number string **PRESENT in this mode** (`<USB_SERIAL_REDACTED>`, value omitted from the published copy) — absent in COM mode
 - Configs: 3 (identical, like COM mode); same garbled strings; same bus/port 3-2
 - No AT capability in this mode (no CDC interface at all)
 

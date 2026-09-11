@@ -17,7 +17,6 @@ Statements are tagged so a future researcher can separate evidence from reasonin
 | `[INTERP]` | Interpretation of observed facts (reasoned, but derived) |
 | `[HYP]` | Hypothesis / unverified assumption to be tested later |
 
-No private data (IMEI, IMSI, phone numbers, account info) appears in this document. See §12 for the masking policy.
 
 ---
 
@@ -649,7 +648,7 @@ Note: exact device number (43) and bus/port (`3-2`) may differ on another machin
 
 ## 12. Notes for future researchers
 
-- **Masking policy:** if `AT+CGSN` (IMEI), `AT+CIMI` (IMSI), `AT+CNUM` (MSISDN), or similar identifiers ever return data, document only that the command was tested and **mask the value** (e.g. `###############`). Never commit real identifiers, phone numbers, SIM data, or account information into this notebook.
+- Published copies use named placeholders for identifier-like values.
 - Keep the `[FACT]` / `[INTERP]` / `[HYP]` discipline: append new observations with tags and timestamps so conclusions stay auditable.
 - The supported-command tally stands at **8/24** as of 2026-09-11; update it (§5) as new commands are probed.
 - Reference standards for the command set: 3GPP **TS 27.007** (modem control: `+CSQ`, `+COPS`, `+CREG`, `+CPIN`, `+CGMM`, …) and **TS 27.005** (SMS AT commands: `+CMGF`, `+CMGS`, `+CMGL`, `+CNMI`, `+CPMS`, `+CSCA`, …). The rejection of the entire TS 27.005 set tested so far is the key open question.
@@ -668,7 +667,7 @@ The investigation was continued with automated tooling, run directly on the host
 4. `[FACT]` `AT+CIND=?` works: `("battchg",(0-5)), ("signal",(0-5)), ("service",(0,1)), ("message",(0,1)), ("call",(0,1)), ("roam",(0,1)), ("smsfull",(0,1))`. `[INTERP]` The presence of **`message`** and **`smsfull`** indicators proves an SMS subsystem exists in the firmware — it is simply not exposed via the TS 27.005 AT set. Also: `AT+CMER=3,0,0,1` was enabled for 20 s (no URCs while idle) and disabled cleanly — fully reversible.
 5. `[FACT]` **`AT+VTS=?` works**: digits `0-9, A-D, #, *` accepted — **DTMF tone dialing is exposed through this port**. (`AT+VTD` is absent.)
 6. `[FACT]` Call-control subsystem present: `AT+CLCC` → OK (no active calls), `AT+CLCC=?` → OK, `AT+CHLD=?` → `(0, 1, 1x, 2, 2x, 3, 4, 5)` (full call-hold/multiparty set), `AT+CLIP=?` → `(0-1)`.
-7. `[FACT]` `AT+CNUM` → OK with empty body (no MSISDN stored on the phone). No identifiers were returned anywhere; masking was armed but never needed.
+7. `[FACT]` `AT+CNUM` → OK with empty body (no MSISDN stored on the phone). Identifier-like values from other probe outputs are represented by placeholders in the published copy.
 8. `[FACT]` Confirmed absent (all `+CME ERROR: 100`): `CR, CRC, CSCB, CSCA=?, CPMS=?, CMGF?, CMUX=?, CGREG?, CGPADDR, CGEREP=?, CVHU=?, CALM?, CLVL?, CVOICE=?, CTZU=?, CTZR=?, CPOL?`, plus `ATI, CGMI, CGMI=?, CGSN, CREG?, CREG=?, CPIN?, CPIN=?, CIMI, CMGF=?, CLAC, GCAP` from phase 1.
 9. `[FACT]` All **3 USB configurations are identical** (each = one CDC ACM pair, same interface layout). No hidden second port in configs 2/3 (`../../captured-output/usb/usb_dump.txt`).
 10. `[FACT]` A 10 s connect-time URC window and a 20 s CMER-enabled window both produced **zero unsolicited bytes** — the port is silent unless addressed.
@@ -688,7 +687,7 @@ The investigation was continued with automated tooling, run directly on the host
 | `../../captured-output/usb/usb_dump.txt` | Full `lsusb -v` dump of all 3 configurations |
 | `../../captured-output/at/at_raw.log` | Raw byte transcript of all real probe sessions |
 
-Validation note: the prober was first run against `../../scripts/mock/mock_modem.py` on a pty; masking was verified with a fake IMEI (`<IMEI_REDACTED>` → `<IMEI_REDACTED>`).
+Validation note: the prober was first run against `../../scripts/mock/mock_modem.py` on a pty; masking was verified with a synthetic identifier fixture.
 
 ### 13.4 Next experiments (revised by the addendum findings) — see §14 for results
 
@@ -722,7 +721,7 @@ Validation: all probes were first run against an upgraded, **stateful** `../../s
    - `AT+EGMR=0,2` → `"1.0"` (hardware version)
    - `AT+EGMR=0,3` → `"Lava_E10_61D_INT_T005_210714"` (firmware; matches `+CGMR`)
    - `AT+EGMR=0,4` → `"LAVA61D_11C_HW"` (board/hardware ID)
-   - `AT+EGMR=0,5` → `"<DEVICE_ID_REDACTED>"` (device serial — fully masked in `../at-probes/at_results4b.md` per §12)
+   - `AT+EGMR=0,5` → `"<DEVICE_ID_REDACTED>"` (device serial value omitted from the published output)
    - `AT+EGMR=0,7` → IMEI (SIM1), masked → `<IMEI_REDACTED>`
 3. `[INTERP]` The IMEI-write capability (`AT+EGMR=1,...`) exists in the firmware. **Hard out of scope** per the standing rules — never sent, never to be sent. Noted here only as a safety observation.
 4. `[FACT]` `AT+ESUO` exists: `=?` → `+ESUO: (4-5)`; read → `+ESUO: 4, 4`. `[INTERP]` This firmware numbers **SIM1=4, SIM2=5** (consistent with TekBuster's `sim+3` where sim is 1-based), not the mock/NokiaTool-style 3/4.
@@ -774,7 +773,7 @@ Method: user switched the handset's USB mode; per-mode snapshots captured with `
 | Mode | VID:PID | Interfaces | Nodes | Notes |
 |---|---|---|---|---|
 | COM port | `0e8d:0003` | 1× CDC ACM (Data 0a + Comm 02/ACM/1) | `/dev/ttyACM0` | no serial string; 3 identical configs; AT channel (§5, §13, §14) |
-| Mass storage | `0e8d:0002` | 1× MSC 08/06/50 (Bulk-Only, `usb-storage`) | `/dev/sdc` | **0 B, no media** — microSD slot empty; internal flash NOT exposed; serial string PRESENT (`<USB_SERIAL_REDACTED>`, masked); no AT capability |
+| Mass storage | `0e8d:0002` | 1× MSC 08/06/50 (Bulk-Only, `usb-storage`) | `/dev/sdc` | **0 B, no media** — microSD slot empty; internal flash NOT exposed; serial string PRESENT (`<USB_SERIAL_REDACTED>`, value omitted from the published copy); no AT capability |
 
 `[FACT]` In MSC mode the PID changes 0003 → 0002 and a serial-number string appears; manufacturer/product strings are equally garbled in both modes; device stays on bus 3, port 2, full-speed, Rev 1.00.
 
