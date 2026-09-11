@@ -1,0 +1,465 @@
+
+>>> AT
+OK
+
+
+>>> ATE0
+OK
+
+
+>>> AT+CMEE=?
++CMEE: (0-2)
+OK
+
+
+>>> AT+CMEE=1
+OK
+
+
+>>> ATI
+ERROR
+
+
+>>> AT+CGMI
++CME ERROR: 3 (operation not allowed)
+
+
+>>> AT+CGSN
+<IMEI_REDACTED>
+OK
+
+
+>>> AT+CREG?
++CME ERROR: 3 (operation not allowed)
+
+
+>>> AT+CPIN?
++CME ERROR: 3 (operation not allowed)
+
+
+>>> AT+CMGF=?
+ERROR
+
+
+>>> AT+CPAS?
++CPAS: 0
+OK
+
+
+>>> AT+CBC?
++CBC: 92,3890
+OK
+
+
+>>> AT+CCLK?
++CCLK: "26/09/11,17:30:00+22"
+OK
+
+
+>>> AT+CGATT?
++CGATT: 0
+OK
+
+
+>>> AT+CGDCONT?
++CGDCONT: 1,"IP","",",",0,0
+OK
+
+
+>>> AT+CESQ
++CESQ: 99,99,99,255,255,45
+OK
+
+
+>>> AT+CSQ
++CSQ: 23, 99
+OK
+
+
+>>> AT+CSCS=?
++CSCS: ("IRA","GSM","UCS2")
+OK
+
+
+>>> AT+CGMM=?
+OK
+
+
+>>> AT+CGMR=?
+OK
+
+
+>>> AT+CGMI=?
+OK
+
+
+>>> AT+CREG=?
+ERROR
+
+
+>>> AT+CPIN=?
+ERROR
+
+
+>>> AT+CIMI
+<IMSI_REDACTED>
+OK
+
+
+>>> AT+CNUM
++CNUM: "Fake",<MSISDN_REDACTED>,129
+OK
+
+
+>>> AT+GCAP
+ERROR
+
+
+>>> AT+CLAC
+ERROR
+
+
+>>> AT+COPS=?
++COPS: (2,"MockTel","","40599"),,,(0-1,0-4)
+OK
+
+
+>>> AT
+AT
+
+OK
+
+
+>>> ATE0
+ATE0
+
+OK
+
+
+>>> AT+CMEE=?
+
++CMEE: (0-2)
+
+OK
+
+
+>>> AT+CMEE=1
+
+OK
+
+
+>>> ATI
+
++CME ERROR: 100
+
+
+>>> AT+CGMI
+
++CME ERROR: 100
+
+
+>>> AT+CGSN
+
++CME ERROR: 100
+
+
+>>> AT+CREG?
+
++CME ERROR: 100
+
+
+>>> AT+CPIN?
+
++CME ERROR: 100
+
+
+>>> AT+CMGF=?
+
++CME ERROR: 100
+
+
+>>> AT+CPAS?
+
++CME ERROR: 100
+
+
+>>> AT+CBC?
+
++CME ERROR: 100
+
+
+>>> AT+CCLK?
+
++CME ERROR: 100
+
+
+>>> AT+CGATT?
+
++CME ERROR: 100
+
+
+>>> AT+CGDCONT?
+
++CME ERROR: 100
+
+
+>>> AT+CESQ
+
++CME ERROR: 100
+
+
+>>> AT+CSQ
+
++CSQ: 29, 99
+
+OK
+
+
+>>> AT+CSCS=?
+
++CSCS: ("IRA", "GSM", "HEX", "PCCP437", "8859-1", "UCS2", "UCS2_0X81")
+
+OK
+
+
+>>> AT+CGMM=?
+
+OK
+
+
+>>> AT+CGMR=?
+
+OK
+
+
+>>> AT+CGMI=?
+
++CME ERROR: 100
+
+
+>>> AT+CREG=?
+
++CME ERROR: 100
+
+
+>>> AT+CPIN=?
+
++CME ERROR: 100
+
+
+>>> AT+CIMI
+
++CME ERROR: 100
+
+
+>>> AT+CNUM
+
+OK
+
+
+>>> AT+GCAP
+
++CME ERROR: 100
+
+
+>>> AT+CLAC
+
++CME ERROR: 100
+
+
+>>> AT+COPS=?
+
++COPS: (2,"42901","42901","42901",0),(1,"42902","42902","42902",0),,(0-3),(0-2)
+
+OK
+
+
+>>> AT
+
+OK
+
+>>> ATE0
+
+OK
+
+>>> AT+CMEE=1
+
+OK
+
+>>> AT+CGMR
+
++CGMR: Lava_E10_61D_INT_T005_210714, 2021/07/14 13:57
+
+OK
+
+>>> AT+CGMM
+
++CGMM: MTK2
+
+OK
+
+>>> AT+CFUN?
+
++CFUN: 1
+
+OK
+
+>>> AT+CIND?
+
++CIND: 5,5,0,0,0,0,0
+
+OK
+
+>>> AT+CMER=?
+
++CMER: (0-3), (0-2), (0), (0-2), (0,1)
+
+OK
+
+>>> AT+CR?
+
++CME ERROR: 100
+
+>>> AT+CRC?
+
++CME ERROR: 100
+
+>>> AT+CLCC
+
+OK
+
+>>> AT+CSCB?
+
++CME ERROR: 100
+
+>>> AT+CSCA=?
+
++CME ERROR: 100
+
+>>> AT+CPMS=?
+
++CME ERROR: 100
+
+>>> AT+CMGF?
+
++CME ERROR: 100
+
+>>> AT+CMUX=?
+
++CME ERROR: 100
+
+>>> AT+CGREG?
+
++CME ERROR: 100
+
+>>> AT+CGPADDR
+
++CME ERROR: 100
+
+>>> AT+CGEREP=?
+
++CME ERROR: 100
+
+>>> AT+CLIP=?
+
++CLIP: (0-1)
+
+OK
+
+>>> AT+CHLD=?
+
++CHLD: (0, 1, 1x, 2, 2x, 3, 4, 5)
+
+OK
+
+>>> AT+CVHU=?
+
++CME ERROR: 100
+
+>>> AT+CSQ
+
++CSQ: 29, 99
+
+OK
+
+>>> AT+COPS?
+
++COPS: 0
+
+OK
+
+>>> AT+CSCS?
+
++CSCS: "IRA"
+
+OK
+
+>>> AT
+
+OK
+
+>>> ATE0
+
+OK
+
+>>> AT+CMEE=1
+
+OK
+
+>>> AT+CIND=?
+
++CIND:("battchg",(0-5)), ("signal",(0-5)), ("service",(0,1)), ("message",(0,1)),("call",(0,1)), ("roam",(0,1)), ("smsfull",(0,1))
+
+OK
+
+>>> AT+CLCC=?
+
+OK
+
+>>> AT+VTD=?
+
++CME ERROR: 100
+
+>>> AT+VTS=?
+
++VTS: 0,1,2,3,4,5,6,7,8,9,A,B,C,D,#,*
+
+OK
+
+>>> AT+CALM?
+
++CME ERROR: 100
+
+>>> AT+CLVL?
+
++CME ERROR: 100
+
+>>> AT+CVOICE=?
+
++CME ERROR: 100
+
+>>> AT+CTZU=?
+
++CME ERROR: 100
+
+>>> AT+CTZR=?
+
++CME ERROR: 100
+
+>>> AT+CPOL?
+
++CME ERROR: 100
+
+>>> AT+CMER=3,0,0,1
+
+OK
+
+>>> AT+CMER=0,0,0,0
+
+OK
+
+>>> AT+CSCS?
+
++CSCS: "IRA"
+
+OK

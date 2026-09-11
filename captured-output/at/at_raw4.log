@@ -1,0 +1,130 @@
+
+>>> AT
+
+OK
+
+>>> ATE0
+
+OK
+
+>>> AT+CMEE=1
+
+OK
+
+>>> AT+CMEE=2
+
+OK
+
+>>> AT+CMEE=1
+
+OK
+
+>>> AT+EGMR=?
+
++EGMR: (0,1),(0-5,7-12)
+
+OK
+
+>>> AT+EGMR=0,0
+
++EGMR: "MT6261"
+
+OK
+
+>>> AT+EGMR=0,3
+
++EGMR: "Lava_E10_61D_INT_T005_210714"
+
+OK
+
+>>> AT+EGMR=0,4
+
++EGMR: "LAVA61D_11C_HW"
+
+OK
+
+>>> AT+EGMR=0,7
+
++EGMR: "<IMEI_REDACTED>"
+
+OK
+
+>>> AT+ESUO=?
+
++ESUO: (4-5)
+
+OK
+
+>>> AT+ESUO?
+
++ESUO: 4, 4
+
+OK
+
+>>> AT+CMGF=?
+
++CME ERROR: 100
+
+>>> AT+CPBS=?
+
++CME ERROR: 100
+
+>>> AT+CIMI
+
++CME ERROR: 100
+
+>>> AT+CKPD=?
+
+OK
+
+>>> AT+CKPD="0"
+
+OK
+
+>>> AT+ESIMS=?
+
+
+ SIM1 STATUS: 0
+
+
+
+ SIM2 STATUS: 0
+
+
+OK
+
+>>> AT+ESIMS?
+
+
+ SIM1 STATUS: 0
+
+
+
+ SIM2 STATUS: 0
+
+
+OK
+
+>>> AT+EFUN=?
+
+OK
+
+>>> AT+EFUN?
+
++EFUN: 1
+
+OK
+
+>>> AT+ESUO=3
+
++CME ERROR: 100
+
+>>> AT+CMEE=1
+
+OK
+
+>>> AT+CSCS?
+
++CSCS: "IRA"
+
+OK

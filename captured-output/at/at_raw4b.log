@@ -1,0 +1,111 @@
+
+>>> AT
+
+OK
+
+>>> ATE0
+
+OK
+
+>>> AT+CMEE=1
+
+OK
+
+>>> AT+EGMR=?
+
++EGMR: (0,1),(0-5,7-12)
+
+OK
+
+>>> AT+EGMR=0,1
+
++EGMR: "2000.00.00"
+
+OK
+
+>>> AT+EGMR=0,2
+
++EGMR: "1.0"
+
+OK
+
+>>> AT+EGMR=0,5
+
++EGMR: "<DEVICE_ID_REDACTED>"
+
+OK
+
+>>> AT+ESUO=?
+
++ESUO: (4-5)
+
+OK
+
+>>> AT+ESUO?
+
++ESUO: 4, 4
+
+OK
+
+>>> AT+ESUO=5
+
+OK
+
+>>> AT+ESUO?
+AT+ESUO?
+
++ESUO: 5, 4
+
+OK
+
+>>> AT+CMGF=?
+AT+CMGF=?
+
+ERROR
+
+>>> AT+CMGS=?
+AT+CMGS=?
+
+ERROR
+
+>>> AT+CPMS=?
+AT+CPMS=?
+
+ERROR
+
+>>> AT+CPBS=?
+AT+CPBS=?
+
+ERROR
+
+>>> AT+CIMI
+AT+CIMI
+
+ERROR
+
+>>> AT+ESUO=4
+AT+ESUO=4
+
+OK
+
+>>> AT+ESUO?
+
++ESUO: 4, 4
+
+OK
+
+>>> AT+CMEE=1
+
+OK
+
+>>> AT+CSCS?
+
++CSCS: "IRA"
+
+OK
+
+>>> AT+CFUN?
+
++CFUN: 1
+
+OK

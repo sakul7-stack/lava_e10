@@ -1,0 +1,160 @@
+
+>>> AT
+
+OK
+
+>>> ATE0
+
+OK
+
+>>> AT+CMEE=1
+
+OK
+
+>>> ATD+<PHONE_NUMBER_REDACTED>;
+
+OK
+
+>>> AT+CLCC
+
++CLCC: 1,0,3,0,0,"<PHONE_NUMBER_REDACTED>",145
+
+OK
+
+>>> AT+VTS=1
+
+OK
+
+>>> AT+VTS=2
+
+OK
+
+>>> AT+VTS=3
+
+OK
+
+>>> AT+VTS=4
+
+OK
+
+>>> AT+VTS=5
+
+OK
+
+>>> AT+VTS=6
+
+OK
+
+>>> AT+VTS=7
+
+OK
+
+>>> AT+VTS=8
+
+OK
+
+>>> AT+VTS=9
+
+OK
+
+>>> AT+VTS=#
+
+OK
+
+>>> AT+VTS=*
+
+OK
+
+>>> AT+CLCC
+
++CLCC: 1,0,3,0,0,"<PHONE_NUMBER_REDACTED>",145
+
+OK
+
+>>> ATH
+
+OK
+
+>>> AT+CLCC
+
+OK
+
+>>> AT
+
+OK
+
+>>> ATE0
+
+OK
+
+>>> AT+CMEE=1
+
+OK
+
+>>> ATD+<PHONE_NUMBER_REDACTED>;
+
+OK
+
+>>> AT+CLCC
+
++CLCC: 1,0,3,0,0,"<PHONE_NUMBER_REDACTED>",145
+
+OK
+
+>>> AT+VTS=1
+
+OK
+
+>>> AT+VTS=2
+
+OK
+
+>>> AT+VTS=3
+
+OK
+
+>>> AT+VTS=4
+
+OK
+
+>>> AT+VTS=5
+
+OK
+
+>>> AT+VTS=6
+
+OK
+
+>>> AT+VTS=7
+
+OK
+
+>>> AT+VTS=8
+
+OK
+
+>>> AT+VTS=9
+
+OK
+
+>>> AT+VTS=#
+
+OK
+
+>>> AT+VTS=*
+
+OK
+
+>>> AT+CLCC
+
++CLCC: 1,0,0,0,0,"<PHONE_NUMBER_REDACTED>",145
+
+OK
+
+>>> ATH
+
+OK
+
+>>> AT+CLCC
+
+OK

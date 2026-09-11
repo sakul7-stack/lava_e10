@@ -1,0 +1,15 @@
+
+>>> AT
+OK
+
+>>> ATE0
+OK
+
+>>> AT+CMEE=1
+OK
+
+>>> AT+CMGF=1
++CME ERROR: 100
+
+>>> ATH
+OK

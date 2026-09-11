@@ -1,0 +1,15 @@
+
+>>> AT
+OK
+
+>>> AT+CMER=3,0,0,1
+OK
+
+>>> AT
+OK
+
+>>> AT+CMER=3,0,0,1
+OK
+
+>>> AT+CMER=0,0,0,0
+OK

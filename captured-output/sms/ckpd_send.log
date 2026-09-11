@@ -1,0 +1,51 @@
+
+>>> AT+CKPD="^"
+OK
+
+>>> AT+CKPD="["
+OK
+
+>>> AT+CKPD="m"
+OK
+
+>>> AT+CKPD="m"
+OK
+
+>>> AT+CKPD="4"
+OK
+
+>>> AT+CKPD="4"
+OK
+
+>>> AT+CKPD="3"
+OK
+
+>>> AT+CKPD="3"
+OK
+
+>>> AT+CKPD="5"
+OK
+
+>>> AT+CKPD="5"
+OK
+
+>>> AT+CKPD="5"
+OK
+
+>>> AT+CKPD="5"
+OK
+
+>>> AT+CKPD="5"
+OK
+
+>>> AT+CKPD="5"
+OK
+
+>>> AT+CKPD="6"
+OK
+
+>>> AT+CKPD="6"
+OK
+
+>>> AT+CKPD="6"
+OK

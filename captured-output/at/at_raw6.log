@@ -1,0 +1,79 @@
+
+>>> AT
+OK
+
+>>> ATE0
+OK
+
+>>> AT+CMEE=1
+OK
+
+>>> AT+ESIMS?
+
+ SIM1 STATUS: 0
+
+
+
+ SIM2 STATUS: 0
+
+
+OK
+
+>>> AT+CMGR=?
++CME ERROR: 100
+
+>>> AT+CMGW=?
++CME ERROR: 100
+
+>>> AT+CMGD=?
++CME ERROR: 100
+
+>>> AT+CMSS=?
++CME ERROR: 100
+
+>>> AT+CNMA=?
++CME ERROR: 100
+
+>>> AT+CSMP=?
++CME ERROR: 100
+
+>>> AT+CSCB=?
++CME ERROR: 100
+
+>>> AT+CMGC=?
++CME ERROR: 100
+
+>>> AT+CSMS=?
++CME ERROR: 100
+
+>>> AT+CSAS=?
++CME ERROR: 100
+
+>>> AT+CRES=?
++CME ERROR: 100
+
+>>> AT+CPMS?
++CME ERROR: 100
+
+>>> AT+CSCA?
++CME ERROR: 100
+
+>>> AT+ECMG=?
++CME ERROR: 100
+
+>>> AT+ECMGS=?
++CME ERROR: 100
+
+>>> AT+ECAMS=?
++CME ERROR: 100
+
+>>> AT+CIND?
++CIND: 5,5,0,0,0,0,0
+
+OK
+
+>>> AT+CMER=3,0,0,1
+OK
+
+>>> AT+CMER=0,0,0,0
+OK
